@@ -1,0 +1,38 @@
+{% extends "base.html" %}
+
+{% block title %}Donation{% endblock %}
+
+{% block content %}
+
+<style>
+table {
+    font-family: arial, sans-serif;
+    border-collapse: collapse;
+    width: 100%;
+}
+
+td, th {
+    border: 1px solid #dddddd;
+    text-align: left;
+    padding: 8px;
+}
+
+tr:nth-child(even) {
+    background-color: #dddddd;
+}
+</style>
+
+      <table border = 1>
+         {% for key, value in dicto.items() %}
+               <th> {{ key }} </th>
+          {% for val in value %}
+            <tr>
+               <td> {{ val }} </td>
+            </tr>
+          {% endfor %}
+
+         {% endfor %}
+      </table>
+
+
+{% endblock %}

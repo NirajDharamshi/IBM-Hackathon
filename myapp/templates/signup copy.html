@@ -1,0 +1,39 @@
+{% extends "base.html" %}
+
+{% block title %}Donation{% endblock %}
+
+{% block content %}
+
+ <div class="jumbotron">
+     <h1>Alum Rock-EarthQuake</h1>
+     <form action = {{ url_for('showSignUp') }}  method="POST" enctype="multipart/form-data">
+      <label for="name" class="signUp">Name:</label>
+      <input type="text" class="form-control" name="inputName" placeholder="Name">
+      <label for="email" class="signUp">Email Address</label>
+      <input type="email" class="form-control" name="inputEmail" placeholder="Email address" required autofocus>
+      <label for="number">Telephone</label>
+      <input type="tel" class="form-control" name="phone" placeholder="Phone Number" required>
+
+      <button onclick="getLocation()">Address</button>
+      <p id="address"></p>
+      <label for="lat" ></label>
+      <input type="hidden" name="lat" id="lat" class="form-control" value="" required>
+      <label for="lon" class="showSignUp"></label>
+      <input type="hidden" name="lon" id="lon" class="form-control" value="" required>
+      <label for="address" class="showSignUp">Item</label>
+      <input type="text" name="item" id="item" class="form-control" placeholder="Item" required>
+
+      <label for="weight" class="showSignUp">Weight</label>
+      <input type="number" name="weight" id="weight" class="form-control" placeholder="approximate weight" required>
+
+      <label for="file" class="showSignUp">Item Image</label>
+      <input type="file" name="file" id="file" class="form-control" accept="uploaded_files/*" placeholder="Upload pic of your item for estimating its volume" required>
+
+      <button id='btn_submit' type="submit" name="showSignup" class="btn btn-lg btn-primary btn-block" >Donate</button>
+    </form>
+
+    <script>
+
+  </script>
+
+{% endblock %}

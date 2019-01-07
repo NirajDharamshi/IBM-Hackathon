@@ -1,0 +1,37 @@
+<html>
+<head>
+  <title>{% block title %}WeHelp App{% endblock %}</title>
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+
+    <link href="./static/jumbotron.css" rel="stylesheet">
+    <link href="../static/signup.css" rel="stylesheet">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+	<script src="static/js/jquery-3.3.1.js"></script>
+
+</head>
+<body>
+     <div class="container">
+      <div class="header">
+        <nav>
+          <ul class="nav nav-pills pull-right">
+            <li role="presentation" class="nav nav-pills pull-right"><a href="home">Home</a></li>
+            <li role="presentation" class="nav nav-pills pull-right"><a href="maps">Volunteer Location</a></li>
+            <li role="presentation" class="nav nav-pills pull-right"><a href="showSignUp">Donate</a></li>
+			<li role="presentation" class="nav nav-pills pull-right"><a href="showdownload">Download</a></li>
+          </ul>
+        </nav>
+        <h3 class="text-muted">WeHelp App</h3>
+      </div>
+
+  {% block content %} {% endblock %}
+
+       <footer class="footer">
+            <p>&copy; WeHelp 2018</p>
+        </footer>
+
+    </div>
+
+</body>
+</html>

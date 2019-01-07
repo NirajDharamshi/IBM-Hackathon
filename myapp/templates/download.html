@@ -1,0 +1,13 @@
+{% extends "base.html" %}
+
+{% block title %}Donation{% endblock %}
+
+{% block content %}
+
+	<form action = {{ url_for('showdownload') }} enctype="multipart/form-data" method="POST">
+	<label for="database" class="sr-only">Download</label>
+	<input type="text" name="database" id="lon" class="form-control" value="" placeholder="file name" required>
+	<button id="btn_submit" class="btn btn-lg btn-primary btn-block" type="submit">Download</button>
+    </form>
+
+{% endblock %}

@@ -1,0 +1,61 @@
+{% extends "base.html" %}
+
+{% block title %}Donation{% endblock %}
+
+{% block content %}
+
+ 
+      <div class="jumbotron">
+        <h1>Alum Rock-EarthQuake</h1>
+        <form action = {{ url_for('showSignUp') }} enctype="multipart/form-data" method="POST">
+        <label for="inputName" class="signUp">Name</label>
+        <input type="name" name="inputName" id="inputName" class="form-control" placeholder="Name" required autofocus>
+        <label for="inputEmail" class="signUp">Email address</label>
+        <input type="email" name="inputEmail" id="inputEmail" class="form-control" placeholder="Email address" required autofocus>
+        <label for="number" class="signup">Phone</label>
+        <input type="tel" name="phone" id="phone" class="form-control" placeholder="Phone Number" required>
+        <label for="text" class="signUp">Item</label>
+        <button onclick="getLocation()">Address</button>
+          <p id="address"></p>
+        <label for="number" class="signUp">Latitude</label>
+        <input type="hidden" name="lat" id="lat" class="form-control" value="" placeholder="Latitude" required>
+        <label for="number" class="signUp">Longitude</label>
+        <input type="hidden" name="lon" id="lon" class="form-control" value="" placeholder="Longitude" required>
+		
+		
+        <input type="text" name="item" id="item" class="form-control" placeholder="Item" required> 
+		<label for="text" class="signUp">Weight</label>
+        <input type="number" name="weight" id="weight" class="form-control" placeholder="approximate weight" required>
+		<label for="img" class="signUp">Item Image</label>
+        <input type="file" name="pic" id="pic" class="form-control" accept="uploaded_files/*" placeholder="Upload pic of your item for estimating its volume" required>
+		
+		
+        <button id='btn_submit' class="btn btn-lg btn-primary btn-block" type="submit">Donate</button>
+      </form>
+      </div>
+ 
+    </div>
+  <script>
+var x = document.getElementById("address");
+
+function getLocation() {
+    if (navigator.geolocation) {
+        navigator.geolocation.getCurrentPosition(showPosition);
+    } else { 
+        x.innerHTML = "Geolocation is not supported by this browser.";
+    }
+}
+
+function showPosition(position) {
+    x.innerHTML = "Latitude: " + position.coords.latitude + 
+    "<br>Longitude: " + position.coords.longitude;
+	document.getElementById('lat').value = position.coords.latitude;
+    document.getElementById('lon').value = position.coords.longitude;
+
+}
+  </script>
+
+{% endblock %}
+
+
+

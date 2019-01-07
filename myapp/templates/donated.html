@@ -1,0 +1,18 @@
+{% extends "base.html" %}
+
+{% block title %}Donated{% endblock %}
+
+{% block content %}
+
+
+    {% with messages = get_flashed_messages() %}
+    {% if messages %}
+    <ul class = "donated" >
+        {% for message in messages %}
+        {{ message }}
+        {% endfor %}
+    </ul>
+    {% endif %}
+    {% endwith %}
+    <p> Thank you for donation.</p>
+{% endblock %}
